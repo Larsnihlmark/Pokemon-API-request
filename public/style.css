@@ -1,0 +1,36 @@
+body{
+    background-color: coral;
+    width: 40rem;
+    margin: auto;
+    font-family: sans-serif;
+}
+
+h1{
+    flex-flow: row;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+div {
+    margin-bottom: 1rem;
+}
+.pokemon-name {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+img {
+    float: left;
+    display: block;
+    padding: 1em;
+    width: 50%;
+    height: 50%;
+    
+}
+button {
+    background-color: white;
+    border-style: none;
+    border: solid 1px black;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
