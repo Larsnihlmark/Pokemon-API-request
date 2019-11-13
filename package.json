@@ -1,0 +1,14 @@
+{
+  "name": "pokemonvsdigimon",
+  "version": "1.0.0",
+  "description": "Pokemon vs Digimon API request",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lars.N",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
