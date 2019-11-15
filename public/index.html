@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel = "stylesheet" type="text/css" href="style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.0/axios.js"></script>
     <title>PokemonVsDigimon</title>
 </head>
 <body>
-    
+    <h1>POKÉMON VS DIGIMON</h1>
+        <div>
+            <!-- Please Enter an ID: -->
+            <input  id="tb" value="1" class="pokemon-input"></input>
+            <button value="Random number" class="pokemon-digimon-button" onclick="randomPokemonValue();">Load Pokémon Data</button>
+        </div>
+        <div>
+                <input value="1" id="to" class="digimon-input"></input>  
+                <button value="Random number" class="digimon-button" onclick="randomDigimonValue();">Load Digimon Data</button>
+        </div>
+            <div>
+                <span class="pokemon-name"></span>
+            </div>
+                <img class="pokemon-image"></img>
+                    <div>
+                        <span class="pokemon-ability"></span>
+                        <img class="pokemon-ability-image"></img>
+                    
+                    </div>
+
+                    <div>
+                        <span class="digimon-name"></span>
+                        <img class="digimon-img" ></img>
+                    </div>
+                    <!-- <button></button> -->
+                    
+            <script src="script.js"></script>
+        
+</div>
 </body>
 </html>
