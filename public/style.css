@@ -20,8 +20,8 @@ div {
     font-weight: bold;
 }
 img {
-    float: left;
-    display: block;
+    display: table-column;
+    float: right;
     padding: 1em;
     width: 50%;
     height: 50%;
