@@ -1,4 +1,4 @@
-Pokemon VS Digimon
+Pokemon VS Pokemon
 
 2 diffrent API request and make something cool with it
 

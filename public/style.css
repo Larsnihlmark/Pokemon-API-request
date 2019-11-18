@@ -1,36 +1,134 @@
 body{
-    background-color: coral;
-    width: 40rem;
+    background-color: rgb(13, 17, 19);
     margin: auto;
-    font-family: sans-serif;
 }
 
-h1{
-    flex-flow: row;
-    text-align: center;
-    vertical-align: middle;
-}
-
-
-div {
-    margin-bottom: 1rem;
-}
-.pokemon-name {
-    text-transform: capitalize;
-    font-weight: bold;
-}
-img {
-    display: table-column;
-    float: right;
-    padding: 1em;
+/* Logo image */
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 50%;
-    height: 50%;
+}
+
+/* Main div with background-image + style */
+.game {
+    position: absolute;
+    background-image: url('http://bit.ly/pokemonbg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: 3px solid rgb(245, 172, 14);
+    border-radius: 8px 8px 0 0;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    height: 480px; 
+    width: 800px; 
+    margin: auto;
+}
+
+.opponent{
+    height: 300px;
+}
+
+.player{
+    height: 145px;
+}
+
+/* Pokemon image style */
+.pokemon-image{
+    position: absolute;
+    height: 118px;
+    right: 139px;
+    bottom: 163px;
+}
+
+.second-pokemon-img{
+    position: absolute;
+    height: 168px;
+    left: 159px;
+    bottom: 3px;
+}
+
+/*  First Statsbox style top left */
+.statsBox{
+    position: absolute;
+    text-transform: capitalize;
+    color:black;
+    width: 300px;
+    left: 30px;
+}
+
+.mini-box{
+    margin: 0;
+    width: 26%;
+    float: left;
+}
+
+.mini-box2{
+    bottom: 20px;
+    margin-left: 15%;
+}
+
+/* Second stats box style */
+.second-stats-box{
+    position: absolute;
+    color: black;
+    text-transform: capitalize;
+    right: 8px;
+    width: 280px;
     
 }
+
+.second-mini-box{
+    margin: 0;
+    width: 26%;
+    float: left;  
+}
+
+.second-mini-box2{
+    bottom: 20px;
+    margin-left: 15%;
+}
+
+/* Menu styling */
+.menu {
+    position: absolute;
+    background-color: #333;
+    border: 3px solid rgb(245, 172, 14);
+    border-radius: 8px 8px 0 0;
+    height: 125px;
+    width: 800px;
+    margin: auto;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 82%;
+    
+}
+
+/* Button styling */
 button {
-    background-color: white;
-    border-style: none;
-    border: solid 1px black;
+    background-color: rgb(151, 204, 28);
+    border-style: solid;
+    border: solid 5px rgb(91, 93, 245);
     padding: 0.25rem 0.5rem;
     cursor: pointer;
+    font-size: 39px;
+    width: 100%;  
+}
+
+.button1{
+    float: left;
+    width: 50%;
+}
+
+.button2{
+    float: right;
+    width: 50%;
+}
+
+.button3{
+    float: right;
+    width: 100%;
+    font-size: 25%;   
 }
