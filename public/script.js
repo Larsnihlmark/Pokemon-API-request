@@ -14,37 +14,48 @@ const secondPokemonName = document.querySelector(".second-pokemon-name");
 //Binding all my classes for Stats
 const pokemonHp = document.querySelector(".pokemon-hp");
 const pokemonHpNumber = document.querySelector(".pokemon-hpNumber");
+
 const pokemonSpeed = document.querySelector(".pokemon-speed");
 const pokemonSpeedNumber = document.querySelector(".pokemon-speedNumber");
+
 const pokemonAttack = document.querySelector(".pokemon-Attack");
 const pokemonAttackNumber = document.querySelector(".pokemon-Attack-Number");
+
 const pokemonDefense = document.querySelector(".pokemon-defense");
 const pokemonDefenseNumber = document.querySelector(".pokemon-defense-Number");
+
 const pokemonSpecialAttack = document.querySelector(".pokemon-S-A");	
 const pokemonSpecialAttackNumber = document.querySelector(".pokemon-S-A-Number");	
+
 const pokemonSpecialDefense = document.querySelector(".pokemon-S-D");
 const pokemonSpecialDefenseNumber = document.querySelector(".pokemon-S-D-Number");
-//Second stats 
+
+//Second stats
 const secondPokemonHp = document.querySelector(".second-pokemon-hp");
 const secondPokemonHpNumber = document.querySelector(".second-pokemon-hpNumber");
+
 const secondPokemonSpeed = document.querySelector(".second-pokemon-speed");
 const secondPokemonSpeedNumber = document.querySelector(".second-pokemon-speedNumber");
+
 const secondPokemonAttack = document.querySelector(".second-pokemon-Attack");
 const secondPokemonAttackNumber = document.querySelector(".second-pokemon-Attack-Number");
+
 const secondPokemonDefense = document.querySelector(".second-pokemon-defense");
 const secondPokemonDefenseNumber = document.querySelector(".second-pokemon-defense-Number");
+
 const secondPokemonSpecialAttack = document.querySelector(".second-pokemon-S-A");	
-const secondPokemonSpecialAttackNumber = document.querySelector(".second-pokemon-S-A-Number");	
+const secondPokemonSpecialAttackNumber = document.querySelector(".second-pokemon-S-A-Number");
+
 const secondPokemonSpecialDefense = document.querySelector(".second-pokemon-S-D");
 const secondPokemonSpecialDefenseNumber = document.querySelector(".second-pokemon-S-D-Number");
 
+//Button event onclick
 const pokebutton = document.querySelector(".pokemon-button")
 pokebutton.addEventListener("click", () => {
     getPokemonData();
-    /* VoicePokemon(); */
-    /* getVoiceData(); */
-    
+   
 });
+//secondButton event onclick
 const secondPokebutton = document.querySelector(".second-pokemon-button")
 secondPokebutton.addEventListener("click", () => {
     getPokemonData1();
@@ -87,8 +98,6 @@ function getPokemonData() {
         pokemonAttackNumber.innerHTML = response.data.stats[4].base_stat;
         pokemonAttack.innerHTML = response.data.stats[4].stat.name;
 
-        /* pokemonStats.innerHTML = getPokemonStats(response.data.stats[0]);
-        pokemonID.innerHTML = getAbilityData(response.data.abilities[0]); */
         
     })
     .catch(function (error) {
@@ -96,24 +105,7 @@ function getPokemonData() {
         pokemonImage.src = "";
     });
 }
-/* function getPokemonStats(stats){
-    var allStats = ""
 
-    for(i = 0; i < stats.length; i++ ){
-        allStats = allStats + stats[i].stat.name ;
-        
-        return allStats;
-    }
-} 
-
-    function getAbilityData(abilities){
-        var result = ""
-        
-        for(i = 0; i < abilities.length; i++ ){
-            result = result + abilities[i].ability.name + "<br></br>";
-        }
-        return result;
-    } */ 
     function getPokemonData1() {
         axios.get(apiUrl + secondPokebutton.value)
         .then(function (response) {

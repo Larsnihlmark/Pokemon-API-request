@@ -11,65 +11,65 @@
     <title>PokemonVsPokemon</title>
 </head>
 <body>
-    <h1>POKÉMON VS POKÉMON</h1>
-        <div>
-            <button value="1" id="tb" class="pokemon-button" onclick="randomPokemonValue();">Random Pokémon</button>
-        </div>
-
-            <div>
-                <button  value="1" id="t1" class="second-pokemon-button" onclick="randomSecondPokemonValue();">Random Pokémon</button>
-            </div>
-                <div>
+    <img class="logo" src="Pokmon-vs-Pokmon.png">
+    <div class="game">
+        <div class="opponent">
+            <img   class="pokemon-image"></img>
+                <div class="statsBox">
                     <h2  id="name-pokemon" class="pokemon-name"></h2>
-                    <img class="pokemon-image"></img>
-                </div>
-                        <div>
-                            <h2>Pokemon Stats</h2>
+                        <div class="mini-box">
                             <span class="pokemon-hp"></span>
                             <span class="pokemon-hpNumber"></span><br>
                             <span class="pokemon-speed"></span>
                             <span class="pokemon-speedNumber"></span><br>
                             <span class="pokemon-Attack"></span>
                             <span class="pokemon-Attack-Number"></span><br>
+                        </div>
+                        <div class="mini-box2">
                             <span class="pokemon-defense"></span>
                             <span class="pokemon-defense-Number"></span><br>
                             <span class="pokemon-S-D"></span>
                             <span class="pokemon-S-D-Number"></span><br>
                             <span class="pokemon-S-A"></span>
                             <span class="pokemon-S-A-Number"></span><br>
-                            
-                        
                         </div>
+                </div>
+        </div>
 
-                    <div>
-                        <h2 id="name-pokemon-second" class="second-pokemon-name"></h2>
-                        <img class="second-pokemon-img" ></img>
-                    </div>
-                        <div>
-                                <h2>Pokemon Stats</h2>
-                                <span class="second-pokemon-hp"></span>
-                                <span class="second-pokemon-hpNumber"></span><br>
-                                <span class="second-pokemon-speed"></span>
-                                <span class="second-pokemon-speedNumber"></span><br>
-                                <span class="second-pokemon-Attack"></span>
-                                <span class="second-pokemon-Attack-Number"></span><br>
-                                <span class="second-pokemon-defense"></span>
-                                <span class="second-pokemon-defense-Number"></span><br>
-                                <span class="second-pokemon-S-D"></span>
-                                <span class="second-pokemon-S-D-Number"></span><br>
-                                <span class="second-pokemon-S-A"></span>
-                                <span class="second-pokemon-S-A-Number"></span><br>
-                              
-                            
+        <div class="player">
+            <img class="second-pokemon-img" ></img>
+                <div class="second-stats-box">
+                    <h2 id="name-pokemon-second" class="second-pokemon-name"></h2>
+                        <div class="second-mini-box">
+                            <span class="second-pokemon-hp"></span>
+                            <span class="second-pokemon-hpNumber"></span><br>
+                            <span class="second-pokemon-speed"></span>
+                            <span class="second-pokemon-speedNumber"></span><br>
+                            <span class="second-pokemon-Attack"></span>
+                            <span class="second-pokemon-Attack-Number"></span><br>
                         </div>
-                    
-                    <div>
-                        <button id="battle" class="battle123" onclick="getVoiceData()">Battle</button>
-                    </div>
-                    
-                    
-            <script src="script.js"></script>
-        
-</div>
+                        <div class="second-mini-box2">
+                            <span class="second-pokemon-defense"></span>
+                            <span class="second-pokemon-defense-Number"></span><br>
+                            <span class="second-pokemon-S-D"></span>
+                            <span class="second-pokemon-S-D-Number"></span><br>
+                            <span class="second-pokemon-S-A"></span>
+                            <span class="second-pokemon-S-A-Number"></span><br>
+                        </div>
+                </div>
+        </div>   
+    </div>
+        <div class="menu">
+            <div class="button1">
+                <button  value="1" id="t1" class="second-pokemon-button" onclick="randomSecondPokemonValue();">TEAM RED</button>
+            </div>
+            <div class="button2">
+                    <button value="1" id="tb"  class="pokemon-button"  onclick="randomPokemonValue();">TEAM BLUE</button>
+            </div>
+            <div class="button3">
+                <button id="battle"  class="battle123" onclick="getVoiceData()">Battle</button>
+            </div>
+        </div>    
+        <script src="script.js"></script>
 </body>
 </html>
