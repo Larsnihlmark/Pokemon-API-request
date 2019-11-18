@@ -54,9 +54,10 @@ body{
 .statsBox{
     position: absolute;
     text-transform: capitalize;
-    color:black;
+    color:rgb(0, 18, 44);
     width: 300px;
     left: 30px;
+
 }
 
 .mini-box{
@@ -68,12 +69,13 @@ body{
 .mini-box2{
     bottom: 20px;
     margin-left: 15%;
+    top: 20px;
 }
 
 /* Second stats box style */
 .second-stats-box{
     position: absolute;
-    color: black;
+    color: rgb(97, 0, 0);
     text-transform: capitalize;
     right: 8px;
     width: 280px;
@@ -110,7 +112,7 @@ body{
 button {
     background-color: rgb(151, 204, 28);
     border-style: solid;
-    border: solid 5px rgb(91, 93, 245);
+    border: solid 5px rgb(20, 21, 109);
     padding: 0.25rem 0.5rem;
     cursor: pointer;
     font-size: 39px;
