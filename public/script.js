@@ -2,7 +2,7 @@
 //API Request
 
 const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
-const voiceAPI = "https://code.responsivevoice.org/responsivevoice.js?key=UsbVlKGm";
+const userAPI = "https://randomuser.me/api/";
 
 // Bind classes for name/image
 const pokemonName = document.querySelector(".pokemon-name");
@@ -49,24 +49,34 @@ const secondPokemonSpecialAttackNumber = document.querySelector(".second-pokemon
 const secondPokemonSpecialDefense = document.querySelector(".second-pokemon-S-D");
 const secondPokemonSpecialDefenseNumber = document.querySelector(".second-pokemon-S-D-Number");
 
+//User first + last name API-request
+const randomUserTitle = document.querySelector(".trainerTitle")
+const randomUser = document.querySelector(".trainerFirstName");
+const randomUserLastName = document.querySelector(".trainerLastName");
+
+const secondRandomUserTitle = document.querySelector(".trainerTitle2")
+const secondRandomUser = document.querySelector(".trainerFirstName2");
+const secondRandomUserLastName = document.querySelector(".trainerLastName2");
+
 //Button event onclick
 const pokebutton = document.querySelector(".pokemon-button")
 pokebutton.addEventListener("click", () => {
     getPokemonData();
-   
+    getUserNameData();
+    trainerChanges();
 });
 //secondButton event onclick
 const secondPokebutton = document.querySelector(".second-pokemon-button")
 secondPokebutton.addEventListener("click", () => {
     getPokemonData1();
-
+    getSecondUserNameData();
+    secondTrainerChanges()
 });
 
 //Axios request for get info
 function getPokemonData() {
     axios.get(apiUrl + pokebutton.value)
     .then(function (response) {
-        console.log(response.data);
 
         //Get Name
         pokemonName.innerHTML = response.data.forms[0].name;
@@ -101,6 +111,7 @@ function getPokemonData() {
         
     })
     .catch(function (error) {
+        console.log(error)
         pokemonName.innerHTML = "(An error has occurred.)";
         pokemonImage.src = "";
     });
@@ -109,8 +120,7 @@ function getPokemonData() {
     function getPokemonData1() {
         axios.get(apiUrl + secondPokebutton.value)
         .then(function (response) {
-            console.log(response.data);
-    
+ 
             //Get Name
             secondPokemonName.innerHTML = response.data.forms[0].name;
     
@@ -144,40 +154,56 @@ function getPokemonData() {
             
         })
         .catch(function (error) {
+            console.log(error)
             secondPokemonName.innerHTML = "(An error has occurred.)";
             secondPokemonImage.src = "";
         });
     }
 
-
-     function getVoiceDataAxios(){
-       axios.get("https://code.responsivevoice.org/responsivevoice.js?key=UsbVlKGm")
+//API request for random user Title/First/Last
+     function getUserNameData(){
+       axios.get(userAPI)
        .then(function(response){
-           console.log(response)
-           var name = response.data.name;
-            var lang = response.data.langs;
-           /* var voices = 
-                 
-           voice =  voices + response.data.responsiveVoice.speak(document.getElementById("name-pokemon").textContent);
-           voice =  voices + response.responsiveVoice.speak(document.getElementById("battle").textContent);
-           voice =  voices + response.responsiveVoice.speak(document.getElementById("name-digimon").textContent);
+           console.log(response.data)
            
-            return voice */
+           randomUserTitle.innerHTML = response.data.results[0].name.title;
+           randomUser.innerHTML = response.data.results[0].name.first;
+           randomUserLastName.innerHTML = response.data.results[0].name.last;
+           
        })
          .catch(function(error){
             console.log(error);
-         })        
-        
-    }
-    function getVoiceData(voiceAPI){
-        var voices = voiceAPI
-
-            voice = voices + responsiveVoice.speak(document.getElementById("name-pokemon").textContent);
-            voice = voices + responsiveVoice.speak(document.getElementById("battle").textContent);
-            voice = voices + responsiveVoice.speak(document.getElementById("name-pokemon-second").textContent);
-            return voice;
+            randomUser.innerHTML = "(An error for user)";
+            randomUserTitle.innerHTML = "(An error for userTitle)";
+            randomUserLastName.innerHTML = "(An error for userLastname)";
+         })          
     }
 
+//API request for secondRandom user Title/First/Last    
+    function getSecondUserNameData(){
+        axios.get(userAPI)
+        .then(function(response){
+            secondRandomUserTitle.innerHTML = response.data.results[0].name.title;
+            secondRandomUser.innerHTML = response.data.results[0].name.first;
+            secondRandomUserLastName.innerHTML = response.data.results[0].name.last;
+        })
+        .catch(function(error){
+            console.log(error)
+            secondRandomUser.innerHTML = "(An error for user)";
+            secondRandomUserTitle.innerHTML = "(An error for userTitle)";
+            secondRandomUserLastName.innerHTML = "(An error for userLastname)";
+        })
+    }
+
+    //Voice getting ID for output
+    function getVoiceData(){
+            voice =  responsiveVoice.speak(document.getElementById("name-pokemon").textContent);
+            voice =  responsiveVoice.speak(document.getElementById("battle").textContent);
+            voice =  responsiveVoice.speak(document.getElementById("name-pokemon-second").textContent);
+        return voice;
+    }
+
+    //Random pokemon value output
     function randomPokemonId(){
         return Math.floor(Math.random() * 801);
     }
@@ -189,6 +215,14 @@ function getPokemonData() {
     }
     function randomSecondPokemonValue(){
         document.getElementById('t1').value = randomSecondPokemonId();
+    }
+
+    // Button click Trainer text 
+    function trainerChanges(){
+        document.getElementById("valueTrainer").innerHTML = "Trainer";
+    }
+    function secondTrainerChanges(){
+        document.getElementById("valueTrainer2").innerHTML = "Trainer";
     }
 
 
