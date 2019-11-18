@@ -4,6 +4,6 @@
 
 <h3>Usage</h3>
 
-1. Run `npm i`<br>
+1. Run `npm install`<br>
 2. Run `node app.js` localhost:9999
 
