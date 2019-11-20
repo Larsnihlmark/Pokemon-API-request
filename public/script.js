@@ -4,7 +4,7 @@
 const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
 const userAPI = "https://randomuser.me/api/";
 
-// Bind classes for name/image
+// Bind classes for name-image
 const pokemonName = document.querySelector(".pokemon-name");
 const pokemonImage = document.querySelector(".pokemon-image");
 //Second name/image
@@ -74,10 +74,10 @@ secondPokebutton.addEventListener("click", () => {
 });
 
 //Axios request for get info
-function getPokemonData() {
-    axios.get(apiUrl + pokebutton.value)
+getPokemonData = async () => {
+    await axios.get(apiUrl + pokebutton.value)
     .then(function (response) {
-
+        
         //Get Name
         pokemonName.innerHTML = response.data.forms[0].name;
 
@@ -112,13 +112,40 @@ function getPokemonData() {
     })
     .catch(function (error) {
         console.log(error)
+        //Name error
         pokemonName.innerHTML = "(An error has occurred.)";
+
+        //Image error
         pokemonImage.src = "";
+
+        //Hp error
+        pokemonHp.innerHTML = "(An error has occured-Hp)"
+        pokemonHpNumber.innerHTML = "(An error has occured-Hp-number)"
+
+        //Speed error
+        pokemonSpeedNumber.innerHTML = "(An error has occured-speed-number)"
+        pokemonSpeed.innerHTML = "(An error has occured-speed)"
+
+        //Special Defense error
+        pokemonSpecialDefense.innerHTML = "(An error has occured-Special-Defense)"
+        pokemonSpecialDefenseNumber.innerHTML = "(An error has occured-Special-Defense-Number)"
+
+        // Special Attack error
+        pokemonSpecialAttack.innerHTML = "(An error has occured-Special-Attack)"
+        pokemonSpecialAttackNumber.innerHTML = "(An error has occured-Special-Attack-Number)"
+
+        // Defense error
+        pokemonDefense.innerHTML = "(An error has occured-Defense)"
+        pokemonDefenseNumber.innerHTML = "(An error has occured-Defense-Number)"
+
+        //Attack error
+        pokemonAttack.innerHTML = "(An error has occured-Attack)"
+        pokemonAttackNumber.innerHTML = "(An error has occured-Attack-Number)"
     });
 }
 
-    function getPokemonData1() {
-        axios.get(apiUrl + secondPokebutton.value)
+    getPokemonData1 = async() => {
+        await axios.get(apiUrl + secondPokebutton.value)
         .then(function (response) {
  
             //Get Name
@@ -155,14 +182,41 @@ function getPokemonData() {
         })
         .catch(function (error) {
             console.log(error)
+            //Name error
             secondPokemonName.innerHTML = "(An error has occurred.)";
+
+            //Image error
             secondPokemonImage.src = "";
+
+            //Hp error
+            secondPokemonHp.innerHTML = "(An error has occured-Hp)"
+            secondPokemonHpNumber.innerHTML = "(An error has occured-Hp-number)"
+
+            //Speed error
+            secondPokemonSpeedNumber.innerHTML = "(An error has occured-speed-number)"
+            secondPokemonSpeed.innerHTML = "(An error has occured-speed)"
+
+            //Special Defense error
+            secondPokemonSpecialDefense.innerHTML = "(An error has occured-Special-Defense)"
+            secondPokemonSpecialDefenseNumber.innerHTML = "(An error has occured-Special-Defense-Number)"
+
+            // Special Attack error
+            secondPokemonSpecialAttack.innerHTML = "(An error has occured-Special-Attack)"
+            secondPokemonSpecialAttackNumber.innerHTML = "(An error has occured-Special-Attack-Number)"
+
+            // Defense error
+            secondPokemonDefense.innerHTML = "(An error has occured-Defense)"
+            secondPokemonDefenseNumber.innerHTML = "(An error has occured-Defense-Number)"
+
+            //Attack error
+            secondPokemonAttack.innerHTML = "(An error has occured-Attack)"
+            secondPokemonAttackNumber.innerHTML = "(An error has occured-Attack-Number)"
         });
     }
 
-//API request for random user Title/First/Last
-     function getUserNameData(){
-       axios.get(userAPI)
+//API request for random user Title-First-Last
+     getUserNameData = async () =>{
+      await axios.get(userAPI)
        .then(function(response){
            console.log(response.data)
            
@@ -173,15 +227,15 @@ function getPokemonData() {
        })
          .catch(function(error){
             console.log(error);
-            randomUser.innerHTML = "(An error for user)";
+            randomUser.innerHTML = "(An error for userFirstName)";
             randomUserTitle.innerHTML = "(An error for userTitle)";
-            randomUserLastName.innerHTML = "(An error for userLastname)";
+            randomUserLastName.innerHTML = "(An error for userLastName)";
          })          
     }
 
-//API request for secondRandom user Title/First/Last    
-    function getSecondUserNameData(){
-        axios.get(userAPI)
+//API request for secondRandom user Title-First-Last    
+    getSecondUserNameData = async () =>{
+        await axios.get(userAPI)
         .then(function(response){
             secondRandomUserTitle.innerHTML = response.data.results[0].name.title;
             secondRandomUser.innerHTML = response.data.results[0].name.first;
@@ -189,9 +243,9 @@ function getPokemonData() {
         })
         .catch(function(error){
             console.log(error)
-            secondRandomUser.innerHTML = "(An error for user)";
+            secondRandomUser.innerHTML = "(An error for userFirstName)";
             secondRandomUserTitle.innerHTML = "(An error for userTitle)";
-            secondRandomUserLastName.innerHTML = "(An error for userLastname)";
+            secondRandomUserLastName.innerHTML = "(An error for userLastName)";
         })
     }
 
@@ -224,6 +278,32 @@ function getPokemonData() {
     function secondTrainerChanges(){
         document.getElementById("valueTrainer2").innerHTML = "Trainer";
     }
+
+    /* var audio = document.getElementById("myaudio");
+    audio.volume = 0.03; */
+    /* audio.onplay() */
+
+    var audio = new Audio("14 Battle! (Trainer Battle).mp3");
+
+audioButton('#play-pause-button').on("click",function(){
+  if($(this).hasClass('fa-play'))
+   {
+     $(this).removeClass('fa-play');
+     $(this).addClass('fa-pause');
+     audio.play();
+   }
+  else
+   {
+     $(this).removeClass('fa-pause');
+     $(this).addClass('fa-play');
+     audio.pause();
+   }
+});
+
+audio.onended = function() {
+     $("#play-pause-button").removeClass('fa-pause');
+     $("#play-pause-button").addClass('fa-play');
+};
 
 
     
