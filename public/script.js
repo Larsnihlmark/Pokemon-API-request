@@ -279,31 +279,27 @@ getPokemonData = async () => {
         document.getElementById("valueTrainer2").innerHTML = "Trainer";
     }
 
-    /* var audio = document.getElementById("myaudio");
-    audio.volume = 0.03; */
-    /* audio.onplay() */
+    //Audio for button toggle on/off
+    var myAudio = document.getElementById("myAudio");
+    myAudio.volume = 0.06;
+    var isPlaying = false;
+    
+    function togglePlay() {
+      if (isPlaying) {
+        myAudio.pause(); 
+      } else {
+        myAudio.play();
+      }
+    }
+    myAudio.onplaying = function() {
+      isPlaying = true;
+    }
+    myAudio.onpause = function() {
+      isPlaying = false;
+    }
+ 
 
-    var audio = new Audio("14 Battle! (Trainer Battle).mp3");
 
-audioButton('#play-pause-button').on("click",function(){
-  if($(this).hasClass('fa-play'))
-   {
-     $(this).removeClass('fa-play');
-     $(this).addClass('fa-pause');
-     audio.play();
-   }
-  else
-   {
-     $(this).removeClass('fa-pause');
-     $(this).addClass('fa-play');
-     audio.pause();
-   }
-});
-
-audio.onended = function() {
-     $("#play-pause-button").removeClass('fa-pause');
-     $("#play-pause-button").addClass('fa-play');
-};
 
 
     
