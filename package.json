@@ -1,7 +1,7 @@
 {
   "name": "pokemonvsdigimon",
   "version": "1.0.0",
-  "description": "Pokemon vs Digimon API request",
+  "description": "Pokemon vs Pokemon API request",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
