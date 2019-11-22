@@ -74,8 +74,8 @@ secondPokebutton.addEventListener("click", () => {
 });
 
 //Axios request for get info
-getPokemonData = async () => {
-    await axios.get(apiUrl + pokebutton.value)
+function getPokemonData()  {
+    axios.get(apiUrl + pokebutton.value)
     .then(function (response) {
         
         //Get Name
@@ -113,39 +113,16 @@ getPokemonData = async () => {
     .catch(function (error) {
         console.log(error)
         //Name error
-        pokemonName.innerHTML = "(An error has occurred.)";
+        pokemonName.innerHTML = "(An error has occurred that ID does not exist. Click again for new Pokemon)";
 
         //Image error
         pokemonImage.src = "";
 
-        //Hp error
-        pokemonHp.innerHTML = "(An error has occured-Hp)"
-        pokemonHpNumber.innerHTML = "(An error has occured-Hp-number)"
-
-        //Speed error
-        pokemonSpeedNumber.innerHTML = "(An error has occured-speed-number)"
-        pokemonSpeed.innerHTML = "(An error has occured-speed)"
-
-        //Special Defense error
-        pokemonSpecialDefense.innerHTML = "(An error has occured-Special-Defense)"
-        pokemonSpecialDefenseNumber.innerHTML = "(An error has occured-Special-Defense-Number)"
-
-        // Special Attack error
-        pokemonSpecialAttack.innerHTML = "(An error has occured-Special-Attack)"
-        pokemonSpecialAttackNumber.innerHTML = "(An error has occured-Special-Attack-Number)"
-
-        // Defense error
-        pokemonDefense.innerHTML = "(An error has occured-Defense)"
-        pokemonDefenseNumber.innerHTML = "(An error has occured-Defense-Number)"
-
-        //Attack error
-        pokemonAttack.innerHTML = "(An error has occured-Attack)"
-        pokemonAttackNumber.innerHTML = "(An error has occured-Attack-Number)"
     });
 }
 
-    getPokemonData1 = async() => {
-        await axios.get(apiUrl + secondPokebutton.value)
+   function getPokemonData1() {
+        axios.get(apiUrl + secondPokebutton.value)
         .then(function (response) {
  
             //Get Name
@@ -183,42 +160,18 @@ getPokemonData = async () => {
         .catch(function (error) {
             console.log(error)
             //Name error
-            secondPokemonName.innerHTML = "(An error has occurred.)";
+            secondPokemonName.innerHTML = "(An error has occurred that ID does not exist. Click again for new Pokemon.)";
 
             //Image error
             secondPokemonImage.src = "";
 
-            //Hp error
-            secondPokemonHp.innerHTML = "(An error has occured-Hp)"
-            secondPokemonHpNumber.innerHTML = "(An error has occured-Hp-number)"
-
-            //Speed error
-            secondPokemonSpeedNumber.innerHTML = "(An error has occured-speed-number)"
-            secondPokemonSpeed.innerHTML = "(An error has occured-speed)"
-
-            //Special Defense error
-            secondPokemonSpecialDefense.innerHTML = "(An error has occured-Special-Defense)"
-            secondPokemonSpecialDefenseNumber.innerHTML = "(An error has occured-Special-Defense-Number)"
-
-            // Special Attack error
-            secondPokemonSpecialAttack.innerHTML = "(An error has occured-Special-Attack)"
-            secondPokemonSpecialAttackNumber.innerHTML = "(An error has occured-Special-Attack-Number)"
-
-            // Defense error
-            secondPokemonDefense.innerHTML = "(An error has occured-Defense)"
-            secondPokemonDefenseNumber.innerHTML = "(An error has occured-Defense-Number)"
-
-            //Attack error
-            secondPokemonAttack.innerHTML = "(An error has occured-Attack)"
-            secondPokemonAttackNumber.innerHTML = "(An error has occured-Attack-Number)"
         });
     }
 
 //API request for random user Title-First-Last
-     getUserNameData = async () =>{
-      await axios.get(userAPI)
+     function getUserNameData() {
+       axios.get(userAPI)
        .then(function(response){
-           console.log(response.data)
            
            randomUserTitle.innerHTML = response.data.results[0].name.title;
            randomUser.innerHTML = response.data.results[0].name.first;
@@ -234,8 +187,8 @@ getPokemonData = async () => {
     }
 
 //API request for secondRandom user Title-First-Last    
-    getSecondUserNameData = async () =>{
-        await axios.get(userAPI)
+    function getSecondUserNameData(){
+        axios.get(userAPI)
         .then(function(response){
             secondRandomUserTitle.innerHTML = response.data.results[0].name.title;
             secondRandomUser.innerHTML = response.data.results[0].name.first;
