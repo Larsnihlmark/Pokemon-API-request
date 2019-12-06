@@ -7,3 +7,5 @@
 1. Run `npm install`<br>
 2. Run `node app.js` localhost:9999
 
+
+[Github](https://github.com/Larsnihlmark/Pokemon-API-request)
