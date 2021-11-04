@@ -2,10 +2,32 @@
 
 2 diffrent API request and make something cool with it
 
-<h3>Usage</h3>
 
-1. Run `npm install`<br>
-2. Run `node app.js` localhost:9999
+# [DEMO](https://larsnihlmark.github.io/PokemonBattle/)
 
 
-[DEMO](https://larsnihlmark.github.io/PokemonBattle/)
+### Future plan
+
+```
+Make it more alive the battle scen
+```
+
+## Deployment
+
+FTP-program and your own webbhotel service
+
+## Built With
+
+* javascript
+* html
+* css
+* API
+* Postman
+
+
+## Authors
+
+* **Lars Nihlmark** - *Initial work* - [larsnihlmark](https://github.com/Larsnihlmark)
+
+
+## 
