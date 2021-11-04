@@ -8,4 +8,4 @@
 2. Run `node app.js` localhost:9999
 
 
-[DEMO](https://larsnihlmark.github.io/Pokemon-API-request/)
+[DEMO](https://larsnihlmark.github.io/PokemonBattle/)
