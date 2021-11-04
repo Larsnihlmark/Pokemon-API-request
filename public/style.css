@@ -75,7 +75,7 @@ body{
 /* Second stats box style */
 .second-stats-box{
     position: absolute;
-    color: rgb(97, 0, 0);
+    color: rgb(15, 0, 0);
     text-transform: capitalize;
     right: 8px;
     width: 280px;
